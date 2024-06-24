@@ -13,8 +13,35 @@ p {
   font-size: 1.1rem;
 }
 
+.startMsg-container {
+  position: absolute !important;
+  top: 25%;
+  left: 25%;
+  background-color: #f8f9fa !important;
+  width: 50%;
+  height: 50%;
+  padding: 5%;
+  border-radius: 20px;
+}
+
+.start-Content {
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+  justify-content: space-around;
+}
+
+.startMsg {
+  padding: 2% !important;
+  margin: 0% !important;
+}
+
+h1 {
+  text-align: center;
+}
+
 .hidden {
-  display: none;
+  display: none !important;
 }
 
 .checkBoxItem {
@@ -27,7 +54,7 @@ p {
 }
 
 .errorMsg {
-  color: red;
+  color: black;
   margin-bottom: 10px;
 }
 
@@ -55,6 +82,7 @@ p {
   padding-top: 4%;
   padding-bottom: 5%;
   border-radius: 5px;
+  animation: scaleInCenter 0.5s;
 }
 
 .listContainer {
@@ -172,5 +200,32 @@ p {
 
   .listItem {
     margin: 2% 0%;
+  }
+
+  .startMsg-container {
+    position: absolute !important;
+    top: 25%;
+    left: 10%;
+    background-color: #f8f9fa !important;
+    width: 80%;
+    height: 50%;
+    padding: 10%;
+    border-radius: 20px;
+  }
+
+  .start-Content {
+    display: flex;
+    flex-direction: column;
+    gap: 7rem;
+    justify-content: space-around;
+  }
+
+  .startMsg {
+    padding: 5% !important;
+    margin: 0% !important;
+  }
+
+  h1 {
+    text-align: center;
   }
 }

@@ -8,6 +8,7 @@ const listItemEl = document.querySelector(".listItem");
 const containerEl = document.querySelector(".container");
 let textInput;
 const delBtn = document.getElementById("delete");
+const startMsg = document.querySelector(".startMsg-container");
 
 //Array dove salvare gli elementi aggiunti alla lista
 const arrEl = [];
@@ -53,6 +54,14 @@ const elementForTheList = function () {
   arrEl.push(textInput);
   //console.log(arrEl);
 };
+
+//Messaggio Iniziale
+startMsg.addEventListener("click", function () {
+  console.log("clicked");
+  startMsg.classList.add("removeItems");
+  removeElementAfterAnimation(startMsg);
+  containerEl.classList.remove("hidden");
+});
 
 //Add element at List function
 const addElementAtList = function () {
