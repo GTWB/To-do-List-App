@@ -1,0 +1,176 @@
+body {
+  margin: 0%;
+  padding: 0%;
+  background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+  background-size: 400% 400%;
+  animation: gradient 15s ease infinite;
+  height: 100vh;
+}
+
+p {
+  margin: 0% 5% !important;
+  padding: 0%;
+  font-size: 1.1rem;
+}
+
+.hidden {
+  display: none;
+}
+
+.checkBoxItem {
+  height: 1.1rem;
+  width: 1.1rem;
+}
+
+.taskDone {
+  text-decoration: line-through;
+}
+
+.errorMsg {
+  color: red;
+  margin-bottom: 10px;
+}
+
+.listItem {
+  display: flex;
+  justify-content: space-between;
+  background-color: #f8f9fa;
+  margin: 5px 5%;
+  padding: 20px 20px;
+  align-items: center;
+  border-radius: 5px;
+}
+
+.form-control {
+  display: inline-block !important;
+  width: 50% !important;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  /* background-color: #eeeeee #23a6d5; */
+  margin: 0% auto;
+  padding-top: 4%;
+  padding-bottom: 5%;
+  border-radius: 5px;
+}
+
+.listContainer {
+  animation: scaleInCenter 0.5s;
+}
+
+.removeItems {
+  animation: scale-out-center 0.5s;
+}
+
+.title {
+  margin-bottom: 5%;
+  text-align: center;
+}
+
+.input {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 4%;
+}
+
+.errorMsg {
+  text-align: center;
+}
+
+.btn {
+  margin-left: 20px;
+}
+
+/**
+ * ----------------------------------------
+ * animation scaleInCenter
+ * ----------------------------------------
+ */
+
+@keyframes scaleInCenter {
+  0% {
+    -webkit-transform: scale(0);
+    transform: scale(0);
+    opacity: 1;
+  }
+  100% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/**
+ * ----------------------------------------
+ * animation scale-out-center
+ * ----------------------------------------
+ */
+
+@keyframes scale-out-center {
+  0% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+    opacity: 1;
+  }
+  100% {
+    -webkit-transform: scale(0);
+    transform: scale(0);
+    opacity: 1;
+  }
+}
+
+/**
+ * ----------------------------------------
+ * animation gradient
+ * ----------------------------------------
+ */
+
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* For Mobile phones */
+@media only screen and (max-width: 430px) {
+  .container {
+    padding: 10% 0%;
+  }
+
+  .input {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 4%;
+  }
+
+  .form-control {
+    width: 100% !important;
+    margin-bottom: 20px;
+  }
+
+  .btn {
+    margin: 1% 0%;
+  }
+
+  .btn-container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .listItem {
+    margin: 2% 0%;
+  }
+}
