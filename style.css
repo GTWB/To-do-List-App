@@ -13,7 +13,7 @@ p {
   font-size: 1.1rem;
 }
 
-.startMsg-container {
+.startMsgContainer {
   position: absolute !important;
   top: 25%;
   left: 25%;
@@ -202,7 +202,7 @@ h1 {
     margin: 2% 0%;
   }
 
-  .startMsg-container {
+  .startMsgContainer {
     position: absolute !important;
     top: 25%;
     left: 10%;
