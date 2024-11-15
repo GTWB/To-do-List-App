@@ -10,10 +10,12 @@ let textInput;
 const delBtn = document.getElementById("delete");
 const startMsg = document.querySelector(".startMsg-container");
 
-//Array dove salvare gli elementi aggiunti alla lista
-const arrEl = [];
+containerEl.classList.add("hidden");
 
-//Messaggio Iniziale
+//Array dove salvare gli elementi aggiunti alla lista
+let arrEl = [];
+
+// //Messaggio Iniziale
 startMsg.addEventListener("click", function () {
   console.log("clicked");
   startMsg.classList.add("removeItems");
@@ -29,7 +31,7 @@ const removeElementAfterAnimation = function (elementToRemove) {
 };
 
 //Create element of adding at the list
-const elementForTheList = function () {
+const createElementForTheList = function () {
   textInput = testo.value;
 
   //creo un element e gli associo una classe
@@ -60,12 +62,15 @@ const elementForTheList = function () {
 
   //Aggiungo all'array
   arrEl.push(textInput);
+  console.log(arrEl);
+  // saveToLocalStorage();
   //console.log(arrEl);
 };
 
 //Add element at List function
 const addElementAtList = function () {
   textInput = testo.value;
+
   //Variabile d'appoggio per salvare l'eventuale duplicato già presente nella lista
   let elexist;
 
@@ -92,7 +97,7 @@ const addElementAtList = function () {
     //Se non è presente inserisci il testo
     else {
       errorMsg.classList.add("hidden");
-      elementForTheList();
+      createElementForTheList();
     }
   }
 };
@@ -142,8 +147,22 @@ containerEl.addEventListener("click", function (e) {
 
   if (btn) {
     console.log("btn clicked");
-    const x = e.target.parentElement.parentElement;
-    x.classList.add("removeItems");
+    const x = e.target.parentElement;
+
+    // x.classList.add("removeItems");
+
+    // Ottieni il valore del contenuto testuale (o di un attributo identificativo)
+    const itemValue = x.querySelector("p").textContent.trim();
+
+    //Elimino dall'array l'elemento
+    for (const [index, value] of arrEl.entries()) {
+      if (value === itemValue) {
+        arrEl.splice(index, 1);
+      }
+    }
+    console.log(`Item Removed: ${itemValue}`);
+
+    console.log(arrEl);
 
     //Aspetto che l'animazione sia terminata prima di rimuovere listContainer
     removeElementAfterAnimation(x);
@@ -160,4 +179,10 @@ delBtn.addEventListener("click", () => {
     //Aspetto che l'animazione sia terminata prima di rimuovere listContainer
     removeElementAfterAnimation(i);
   }
+  arrEl = [];
+  console.log(`All items have been removed`);
+  console.log(arrEl);
 });
+
+// Load data from local storage on page load
+// window.addEventListener("load", loadFromLocalStorage);
